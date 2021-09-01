@@ -1,4 +1,4 @@
-from config import *
+from swm_config import *
 
 
 def error_handler(tag, err):
@@ -25,7 +25,7 @@ class SWM:
 		self.window_list = []
 
 		# Special key commands
-		self.key_cmds = [["close"], ["focus_left"], ["focus_right"]]
+		self.key_cmds = [["close"], ["focus_left"], ["focus_right"], ["ws1"], ["ws2"]]
 
 		self.__grab_keys()
 
@@ -65,6 +65,7 @@ class SWM:
 						self.__destroy_window()
 						self.__configure_window(event)
 
+					# To change the focus in the windows
 					elif cmd[0] == "focus_left":
 						if self.active_window is not None:
 							next_focus = self.window_list.index(self.active_window) - 1
@@ -80,7 +81,6 @@ class SWM:
 								next_focus = len(self.window_list) - 1
 
 							self.__update_focus(self.window_list[next_focus])
-
 
 	#-----------------#
 	# Window Handlers #
@@ -176,7 +176,6 @@ class SWM:
 
 		while True:
 			try:
-				#self.__update_focus()
 				self.__update_border()
 				self.event()
 			except (KeyboardInterrupt, SystemExit):
