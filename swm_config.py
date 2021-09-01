@@ -32,9 +32,6 @@ key_binds = {
 	(MOD, Xlib.XK.XK_q): ["close"],
 	(MOD, Xlib.XK.XK_Left): ["focus_left"],
 	(MOD, Xlib.XK.XK_Right): ["focus_right"],
-
-	(MOD, Xlib.XK.XK_1): ["ws1"],
-	(MOD, Xlib.XK.XK_2): ["ws2"]
 }
 
 # Auto start commands
